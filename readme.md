@@ -27,15 +27,13 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
-### Install And Start Minikube
+### Install Minikube
 
 Minikube is a tool that makes it easy to run Kubernetes locally.[For more.](https://kubernetes.io/docs/setup/learning-environment/minikube/)
 
 ```bash
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
   && chmod +x minikube && sudo mv minikube /usr/local/bin
-
-minikube start
 ```
 
 ### Create Docker Image
@@ -56,6 +54,14 @@ docker push [DOCKER_HUB_USERNAME]/k8s-go-pg-example
 ```bash
 docker image tag [IMAGE_TAG] gcr.io/[PROJECT_ID]/k8s-go-pg-example
 docker push gcr.io/[PROJECT_ID]/k8s-go-pg-example
+```
+
+### Start Minikube
+
+Make sure you moved minikube binary to /usr/local/bin. Or use in current path with ```./minikube start``` command.
+
+```bash
+minikube start
 ```
 
 ### Create Secret File On Cluster
