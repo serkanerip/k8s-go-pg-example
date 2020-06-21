@@ -77,8 +77,8 @@ kubectl apply -f deployments/go-pg-secret.yaml
 Deployment is a kubernetes resource that creates and manages pods for us. In this stage we creates deployment resource for postgresql database. Pods are closed box in default until we expose them. Therefore we creates a service with ClusterIP type this means this pod only accessible in cluster.
 
 ```bash
-kubectl apply -f pg-deployments.yaml
-kubectl apply -f pg-service.yaml
+kubectl apply -f deployments/pg-deployments.yaml
+kubectl apply -f deployments/pg-service.yaml
 ```
 
 ### Create Deployment And Service On Cluster For API
