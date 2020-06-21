@@ -15,7 +15,7 @@ spec:
         app: api-pod
     spec:
       containers:
-        - image: gcr.io/serkan-tests/go-pg
+        - image: gcr.io/serkan-tests/go-pg # put your image path to here
           name: go-pg-api
           imagePullPolicy: "IfNotPresent"
           envFrom:

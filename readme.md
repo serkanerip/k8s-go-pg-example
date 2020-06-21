@@ -56,6 +56,10 @@ docker image tag [IMAGE_TAG] gcr.io/[PROJECT_ID]/k8s-go-pg-example
 docker push gcr.io/[PROJECT_ID]/k8s-go-pg-example
 ```
 
+### Change Image Path In Api Deployment File
+
+After pushing image to registry you should change image path in ```deployments/api-deployment.yaml``` file. There is a comment in file to help you.
+
 ### Start Minikube
 
 Make sure you moved minikube binary to /usr/local/bin. Or use in current path with ```./minikube start``` command.
@@ -117,6 +121,23 @@ Api have 1 endpoint with 2 http method.
     "email": "serkanerip@gmail.com",
     "password": "123456"
 }
+```
+
+## Cleanup Minikube
+
+```
+minikube stop
+```
+
+## Cleanup Clusters
+If you dont want to stop minikube.
+
+```
+kubectl delete deploy/pg-deployment
+kubectl delete svc/pg-service
+kubectl delete deploy/api-deployment
+kubectl delete svc/api-service
+kubectl delete secrets/go-pg-secret
 ```
 
 I hope this tutorial helps you to start to learn kubernetes. If you are in trouble with doing this example open an issue i will try to help you.
