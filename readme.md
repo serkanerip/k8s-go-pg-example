@@ -126,7 +126,7 @@ Api have 1 endpoint with 2 http method.
 ## Cleanup Minikube
 
 ```
-minikube stop
+minikube delete
 ```
 
 ## Cleanup Clusters
