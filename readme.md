@@ -86,8 +86,8 @@ kubectl apply -f deployments/pg-service.yaml
 In this stage we creates deployment resource for our api and a service with NodePort type this means we can access this pod over nodes.
 
 ```bash
-kubectl apply -f api-deployment.yaml
-kubectl apply -f api-service.yaml
+kubectl apply -f deployments/api-deployment.yaml
+kubectl apply -f deployments/api-service.yaml
 ```
 
 ### Get Service Ip From Minikube
