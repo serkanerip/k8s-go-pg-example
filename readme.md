@@ -65,7 +65,7 @@ After pushing image to registry you should change image path in `deployments/api
 
 Make sure you moved minikube binary to /usr/local/bin. Or use in current path with `./minikube start` command.
 
-Minikube needs a hypervisor or docker to start, you should install KVM or VirtualBox on your machine if you already have skip this step.[for details click here.](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+Minikube needs a hypervisor or docker to start, you should install KVM or VirtualBox on your machine if you already have skip this step [for details click here.](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
 #### With Hypervisor
 
