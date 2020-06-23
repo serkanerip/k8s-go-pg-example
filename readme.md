@@ -49,6 +49,7 @@ docker build -t [DOCKER_HUB_USERNAME]/k8s-go-pg-example .
 ```bash
 docker push [DOCKER_HUB_USERNAME]/k8s-go-pg-example
 ```
+
 #### Gcloud Registry
 
 ```bash
@@ -58,14 +59,24 @@ docker push gcr.io/[PROJECT_ID]/k8s-go-pg-example
 
 ### Change Image Path In Api Deployment File
 
-After pushing image to registry you should change image path in ```deployments/api-deployment.yaml``` file. There is a comment in file to help you.
+After pushing image to registry you should change image path in `deployments/api-deployment.yaml` file. There is a comment in file to help you.
 
 ### Start Minikube
 
-Make sure you moved minikube binary to /usr/local/bin. Or use in current path with ```./minikube start``` command.
+Make sure you moved minikube binary to /usr/local/bin. Or use in current path with `./minikube start` command.
+
+Minikube needs a hypervisor or docker to start, you should install KVM or VirtualBox on your machine if you already have skip this step.[for details click here.](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+
+#### With Hypervisor
 
 ```bash
 minikube start
+```
+
+#### Without Hypervisor
+
+```bash
+minikube start --driver=none
 ```
 
 ### Create Secret File On Cluster
@@ -111,15 +122,17 @@ Open the url that minikube gives you in your favorite browser. And you will see 
 ![](./assets/ss.png)
 
 Api have 1 endpoint with 2 http method.
+
 1. /users [GET] -> Retrieves all users but only 100
 2. /users [POST] -> Creates a new user. Create a post request with body to create a user.
 
 **body example**
+
 ```json
 {
-    "nickname": "serkanerip",
-    "email": "serkanerip@gmail.com",
-    "password": "123456"
+  "nickname": "serkanerip",
+  "email": "serkanerip@gmail.com",
+  "password": "123456"
 }
 ```
 
@@ -130,6 +143,7 @@ minikube delete
 ```
 
 ## Cleanup Clusters
+
 If you dont want to stop minikube.
 
 ```
